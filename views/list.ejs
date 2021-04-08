@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1>ho <%= listtitle %></h1>
+    </div>
+    <div class="box">
+        <% listitem.forEach(function(item){ %>
+            <form action="/delete" method="post">
+     <div class= "item">
+           <input type="checkbox" name="check" value = "<%=item._id %>" onChange="this.form.submit()" >
+                <p> <%= item.name %></p>
+        </div>
+        <% }) %>
+        <input type="hidden" name="listname" value="<%= listtitle %>"></input>
+    </form>
+
+        <form action="/" method="post">
+            <input type="text" name="item1" placeholder="New Item">
+            <button type="submit" name="list" value=<%= listtitle %>  >+</button>
+            </form>
+
+    </div>
+  
+   
+</body>
+</html>
